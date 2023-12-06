@@ -31,6 +31,11 @@ describe('route endpoints', () => {
     expect(res.body).toStrictEqual(expected)
   })
 
+  it('should return an error when query not found', async () => {
+    const res = await request(app).get('/api/items?q=')
+    expect(res.statusCode).toEqual(400)
+  })
+
   it('should return the item endpoint', async () => {
     const expected = {
       id: 'foo',
@@ -38,5 +43,10 @@ describe('route endpoints', () => {
     const res = await request(app).get('/api/items/foo')
     expect(res.statusCode).toEqual(200)
     expect(res.body).toStrictEqual(expected)
+  })
+
+  it('should return an error when item id not found', async () => {
+    const res = await request(app).get('/api/items/')
+    expect(res.statusCode).toEqual(400)
   })
 })
