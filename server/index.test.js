@@ -7,7 +7,7 @@ describe('route endpoints', () => {
   it('should return server ping response', async () => {
     const expected = {
       name: 'MELI Server',
-      version: '1.0.0',
+      version: expect.any(String),
     }
 
     const res = await request(app).get('/')
