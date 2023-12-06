@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start:dev": "node --env-file=.env.local --watch index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "format": "prettier . --check",
@@ -13,15 +15,16 @@
   "private": true,
   "swpm": "npm",
   "dependencies": {
+    "compression": "1.7.4",
     "express": "4.18.2"
   },
   "devDependencies": {
-    "eslint": "^8.55.0",
+    "eslint": "8.55.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-n": "^16.3.1",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-n": "16.3.1",
+    "eslint-plugin-promise": "6.1.1",
     "prettier": "3.1.0"
   }
 }
