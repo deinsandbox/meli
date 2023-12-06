@@ -5,7 +5,7 @@ import compression from 'compression'
 import query from './src/routes/api/query.js'
 import items from './src/routes/api/items.js'
 
-const { SERVER_PROTOCOL, SERVER_DOMAIN, SERVER_PORT } = process.env
+const { SERVER_PROTOCOL = 'http', SERVER_DOMAIN = 'localhost', SERVER_PORT = '3030' } = process.env ?? {}
 
 const app = express()
 app.use(compression())
@@ -31,3 +31,5 @@ app.get('*', (req, res) => {
 app.listen(SERVER_PORT, () => {
   console.info(`MELI Server 🌐 ${SERVER_PROTOCOL}://${SERVER_DOMAIN}:${SERVER_PORT}`)
 })
+
+export default app
