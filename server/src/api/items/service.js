@@ -1,6 +1,6 @@
 import { SERVER_API_URL, ITEM_ENDPOINT, DESCRIPTION_ENDPOINT } from '../../config/config.js'
 
-export const getItem = async (id) => {
+export const getItemById = async (id) => {
   const result = {
     data: {},
   }

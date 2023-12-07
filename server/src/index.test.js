@@ -41,6 +41,14 @@ describe('route endpoints', () => {
     expect(result.status).toEqual(200)
     expect(result.body).toHaveProperty('author')
     expect(result.body).toHaveProperty('item')
+    expect(result.body.item).toHaveProperty('id')
+    expect(result.body.item).toHaveProperty('title')
+    expect(result.body.item).toHaveProperty('price')
+    expect(result.body.item).toHaveProperty('picture')
+    expect(result.body.item).toHaveProperty('condition')
+    expect(result.body.item).toHaveProperty('free_shipping')
+    expect(result.body.item).toHaveProperty('sold_quantity')
+    expect(result.body.item).toHaveProperty('description')
   })
 
   it('should return an error when item id not found', async () => {

@@ -1,10 +1,10 @@
 import { describe, it, expect, vi } from 'vitest'
-import { getQuery } from './service.js'
+import { getItemsByQuery } from './service.js'
 import { mockQuery } from './service.mock.js'
 
 global.fetch = vi.fn()
 
-describe('getQuery', () => {
+describe('getItemsByQuery', () => {
   beforeEach(() => {
     global.fetch.mockReset()
   })
@@ -19,7 +19,7 @@ describe('getQuery', () => {
     }
 
     // Act
-    const result = await getQuery(q)
+    const result = await getItemsByQuery(q)
 
     // Assert
     expect(result).toEqual(expectedResult)
@@ -31,7 +31,7 @@ describe('getQuery', () => {
     fetch.mockResolvedValue({ ok: true, json: () => Promise.resolve(mockQuery.error) })
 
     // Act
-    const result = await getQuery(q)
+    const result = await getItemsByQuery(q)
 
     // Assert
     expect(result.data).toMatchObject(mockQuery.error)
@@ -43,7 +43,7 @@ describe('getQuery', () => {
     fetch.mockResolvedValue({ json: () => Promise.reject(Error('error')) })
 
     // Act
-    const result = await getQuery(q)
+    const result = await getItemsByQuery(q)
 
     // Assert
     expect(result.data).toMatchObject({})

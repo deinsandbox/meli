@@ -1,6 +1,6 @@
 import { SERVER_API_URL, SEARCH_ENDPOINT } from '../../config/config.js'
 
-export const getQuery = async (q, limit = 4) => {
+export const getItemsByQuery = async (q, limit = 4) => {
   const result = {
     data: {},
   }

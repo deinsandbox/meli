@@ -40,6 +40,7 @@
         "typescript",
         "typescriptreact"
     ],
+    "path-intellisense.extensionOnImport": true,
     "[javascript][typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,

@@ -1,5 +1,5 @@
 import express from 'express'
-import { getQuery } from './service.js'
+import { getItemsByQuery } from './service.js'
 
 const router = express.Router()
 
@@ -12,7 +12,7 @@ router.get('/items', async (req, res) => {
       return
     }
 
-    const response = await getQuery(q)
+    const response = await getItemsByQuery(q)
     if (response?.ok === false) {
       throw new Error('Oops! Something went wrong, please try again later.')
     }
