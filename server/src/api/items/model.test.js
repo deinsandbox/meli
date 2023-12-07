@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest'
-import { parceItemModel } from './model.js'
+import { parseItemModel } from './model.js'
 import { mockItems } from './service.mock.js'
 import { mockModelItem } from './model.mock.js'
 
-describe('parceItemModel', () => {
+describe('parseItemModel', () => {
   it('should return model item', async () => {
     // Arrange
     const data = {
@@ -13,7 +13,7 @@ describe('parceItemModel', () => {
     const expectedResult = mockModelItem.ok.item
 
     // Act
-    const result = parceItemModel(data)
+    const result = parseItemModel(data)
 
     // Assert
     expect(result).toMatchObject(expectedResult)
@@ -25,7 +25,7 @@ describe('parceItemModel', () => {
     const expectedResult = {}
 
     // Act
-    const result = parceItemModel(data)
+    const result = parseItemModel(data)
 
     // Assert
     expect(result).toMatchObject(expectedResult)

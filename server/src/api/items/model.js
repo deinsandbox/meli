@@ -1,7 +1,7 @@
 import { getDecimalLength } from '../../helpers/currency.js'
 import { getImage } from '../../helpers/images.js'
 
-export const parceItemModel = (data) => {
+export const parseItemModel = (data) => {
   try {
     const {
       id,

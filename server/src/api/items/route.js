@@ -1,6 +1,6 @@
 import express from 'express'
 import { getItemById } from './service.js'
-import { parceItemModel } from './model.js'
+import { parseItemModel } from './model.js'
 import { isEmptyObject } from '../../helpers/validations.js'
 
 const router = express.Router()
@@ -23,7 +23,7 @@ router.get('/items/:id', async (req, res) => {
       throw new Error('Oops! Something went wrong, please try again later.')
     }
 
-    const model = parceItemModel(response.data)
+    const model = parseItemModel(response.data)
     if (isEmptyObject(model)) {
       throw new Error('Oops! Something went wrong, please try again later.')
     }
