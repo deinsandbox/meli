@@ -1,9 +1,11 @@
-import packageConfig from './package.json' assert { type: 'json' }
+import packageConfig from '../package.json' assert { type: 'json' }
 import express from 'express'
 import compression from 'compression'
 
-import query from './src/routes/api/query.js'
-import items from './src/routes/api/items.js'
+import { author } from './middleware/author.js'
+
+import query from './api/query/route.js'
+import items from './api/items/route.js'
 
 const { SERVER_PROTOCOL = 'http', SERVER_DOMAIN = 'localhost', SERVER_PORT = '3030' } = process.env ?? {}
 
@@ -11,6 +13,7 @@ const app = express()
 app.use(compression())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(author)
 
 app.get('/', (req, res) => {
   res.status(200)

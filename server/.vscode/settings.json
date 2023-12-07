@@ -1,10 +1,12 @@
 {
     "cSpell.words": [
+        "lastname",
         "meli",
         "swpm"
     ],
     "explorer.fileNesting.patterns": {
         "*.js": "$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture)*.snap",
+        "package.json": "package-lock.json, .prettier*, .eslint*, .gitignore, vitest.config.js"
     },
     "emmet.excludeLanguages": [],
     "emmet.includeLanguages": {
