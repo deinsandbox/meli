@@ -20,15 +20,15 @@ export const parseItemModel = (data) => {
 
     const item = {
       id,
-      title: title,
+      title,
       price: {
         currency: currency_id,
         amount: price,
         decimals: getDecimalLength(price) ?? 2,
       },
       picture: getImage(thumbnail, secure_thumbnail, pictures),
-      condition: condition,
-      free_shipping: free_shipping,
+      condition,
+      free_shipping,
       sold_quantity: sold_quantity ?? 0,
       description: plain_text,
     }

@@ -1,5 +1,6 @@
 import express from 'express'
 import { getItemsByQuery } from './service.js'
+import { parseQueryModel } from './model.js'
 
 const router = express.Router()
 
@@ -17,10 +18,13 @@ router.get('/items', async (req, res) => {
       throw new Error('Oops! Something went wrong, please try again later.')
     }
 
+    const { categories, items } = parseQueryModel(response.data) ?? {}
+
     res.status(200)
     res.json({
       author: res.author,
-      items: response.data,
+      categories,
+      items,
     })
   } catch (e) {
     res.status(500)

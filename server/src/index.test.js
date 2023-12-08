@@ -28,7 +28,26 @@ describe('route endpoints', () => {
 
     expect(result.status).toEqual(200)
     expect(result.body).toHaveProperty('author')
+    expect(result.body).toHaveProperty('categories')
     expect(result.body).toHaveProperty('items')
+    expect(result.body.items[0]).toHaveProperty('id')
+    expect(result.body.items[0]).toHaveProperty('title')
+    expect(result.body.items[0]).toHaveProperty('price')
+    expect(result.body.items[0]).toHaveProperty('picture')
+    expect(result.body.items[0]).toHaveProperty('condition')
+    expect(result.body.items[0]).toHaveProperty('free_shipping')
+    expect(result.body.categories).toHaveLength(result.body.items.length)
+  })
+
+  it('should return the empty query endpoint', async () => {
+    const result = await request(app).get('/api/items?q=foobar')
+
+    expect(result.status).toEqual(200)
+    expect(result.body).toHaveProperty('author')
+    expect(result.body).toHaveProperty('categories')
+    expect(result.body).toHaveProperty('items')
+    expect(result.body.categories).toMatchObject([])
+    expect(result.body.items).toMatchObject([])
   })
 
   it('should return an error when query not found', async () => {
