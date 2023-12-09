@@ -1,6 +1,7 @@
 import { it, expect, describe } from 'vitest'
 import { RouterProvider, createBrowserRouter, createMemoryRouter } from 'react-router-dom'
 import { render, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 import routesConfig from './routes.config.jsx'
 
@@ -45,5 +46,20 @@ describe('Router', () => {
     })
     render(<RouterProvider router={router} />)
     expect(screen.getByText(/Oops!/i)).toBeInTheDocument()
+  })
+
+  it('should navigate from error to home', async () => {
+    userEvent.setup()
+
+    const router = createMemoryRouter(routesConfig, {
+      initialEntries: ['/error'],
+    })
+    render(<RouterProvider router={router} />)
+    expect(screen.getByText(/Oops!/i)).toBeInTheDocument()
+
+    const homeButton = screen.getByRole('button', { name: 'Back to Home' })
+    await userEvent.click(homeButton)
+
+    expect(screen.getByText(/Home/i)).toBeInTheDocument()
   })
 })

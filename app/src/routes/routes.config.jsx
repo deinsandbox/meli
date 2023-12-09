@@ -2,7 +2,7 @@ import Home from '../pages/Home.jsx'
 import Result from '../pages/Result.jsx'
 import Item from '../pages/Item.jsx'
 
-import Error from '../pages/Error.jsx'
+import Error from './Error.jsx'
 
 const routesConfig = [
   {
