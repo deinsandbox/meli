@@ -54,7 +54,7 @@ export const parseQueryModel = (data) => {
       }
     })
   } catch (error) {
-    console.error('Model Query => Items: ', error)
+    console.error('Model Error => Search: ', error)
   }
 
   return result

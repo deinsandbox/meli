@@ -19,7 +19,7 @@ describe('parseItemModel', () => {
     expect(result).toMatchObject(expectedResult)
   })
 
-  it('should return not model item', async () => {
+  it('should not return model item', async () => {
     // Arrange
     const data = {}
     const expectedResult = {}

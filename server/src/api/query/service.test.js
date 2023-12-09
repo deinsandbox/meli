@@ -37,7 +37,7 @@ describe('getItemsByQuery', () => {
     expect(result.data).toMatchObject(mockQuery.error)
   })
 
-  it('should return an error if there is an error in the item or description data', async () => {
+  it('should return an error if fails', async () => {
     // Arrange
     const q = 'foobar'
     fetch.mockResolvedValue({ json: () => Promise.reject(Error('error')) })

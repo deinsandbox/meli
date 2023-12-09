@@ -43,7 +43,7 @@ describe('getItemById', () => {
     expect(result.error).toBeTruthy()
   })
 
-  it('should return an error if there is an error in the item or description data', async () => {
+  it('should return an error if fails', async () => {
     // Arrange
     const id = 'XLA905204703'
     fetch.mockResolvedValueOnce({ json: () => Promise.reject(Error('error')) })

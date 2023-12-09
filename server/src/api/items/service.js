@@ -1,4 +1,4 @@
-import { SERVER_API_URL, ITEM_ENDPOINT, DESCRIPTION_ENDPOINT } from '../../config/config.js'
+import { SERVER_API_URL, ITEM_ENDPOINT, ITEM_DESCRIPTION_ENDPOINT } from '../../config/config.js'
 
 export const getItemById = async (id) => {
   const result = {
@@ -7,7 +7,7 @@ export const getItemById = async (id) => {
 
   try {
     const urlItem = new URL(id, `${SERVER_API_URL}/${ITEM_ENDPOINT}`)
-    const urlDescription = new URL(DESCRIPTION_ENDPOINT, `${urlItem}/`)
+    const urlDescription = new URL(ITEM_DESCRIPTION_ENDPOINT, `${urlItem}/`)
     const promisesList = [urlItem, urlDescription].map(async (url) => await fetch(url.toString()))
 
     const [resItem, resDescription] = (await Promise.all(promisesList)) ?? []
