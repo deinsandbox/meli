@@ -6,6 +6,7 @@
     ],
     "explorer.fileNesting.patterns": {
         "*.js": "$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture)*.snap",
+        "package.json": "package-lock.json, .eslint*, .gitignore, .prettier*, .stylelint*, vite*.config.js",
     },
     "emmet.excludeLanguages": [],
     "emmet.includeLanguages": {
@@ -43,7 +44,7 @@
     ],
     "[javascript][typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": false,
+        "editor.formatOnSave": true,
         // Runs Prettier, then ESLint
         "editor.codeActionsOnSave": [
             "source.formatDocument",
