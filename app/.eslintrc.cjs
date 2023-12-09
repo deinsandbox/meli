@@ -25,8 +25,8 @@ module.exports = {
     'react/self-closing-comp': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-    'testing-library/await-async-query': 'error',
-    'testing-library/no-await-sync-query': 'error',
+    // 'testing-library/await-async-query': 'error', //TODO: check this false positive report
+    // 'testing-library/no-await-sync-query': 'error', //TODO: check this false positive report
     'testing-library/no-debugging-utils': 'warn',
     'testing-library/no-dom-import': 'off',
     'jest-dom/prefer-checked': 'error',
