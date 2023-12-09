@@ -1,6 +1,6 @@
 import { useRouteError } from 'react-router-dom'
 
-export const Error = () => {
+const Error = () => {
   const error = useRouteError()
   console.error(error)
 
@@ -14,3 +14,5 @@ export const Error = () => {
     </div>
   )
 }
+
+export default Error

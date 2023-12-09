@@ -2,7 +2,8 @@ import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 const params = {}
-export const Result = () => {
+
+const Result = () => {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
 
@@ -18,3 +19,5 @@ export const Result = () => {
 
   return <div>Result {params['search']}</div>
 }
+
+export default Result

@@ -1,10 +1,12 @@
+import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
-   test: {
-     globals: true,
-     resolveSnapshotPath: (testPath, snapExtension) => testPath + snapExtension,
-     environment: 'jsdom',
-     setupFiles: '.vitest/setup.js',
-   },
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    resolveSnapshotPath: (testPath, snapExtension) => testPath + snapExtension,
+    setupFiles: '.vitest/setup.js',
+  },
 })
