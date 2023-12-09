@@ -74,4 +74,17 @@ describe('route endpoints', () => {
     const result = await request(app).get('/api/items/')
     expect(result.status).toEqual(400)
   })
+
+  it('should return the categories endpoint', async () => {
+    const result = await request(app).get('/api/categories/MLA90306')
+    expect(result.status).toEqual(200)
+    expect(result.body).toHaveProperty('path')
+  })
+
+  it('should return an error when category id not found', async () => {
+    const result = await request(app).get('/api/categories/')
+
+    expect(result.status).toEqual(404)
+    expect(result.body).toStrictEqual({ code: 404, error: 'not found' })
+  })
 })

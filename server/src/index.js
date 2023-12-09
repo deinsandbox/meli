@@ -6,6 +6,7 @@ import { author } from './middleware/author.js'
 
 import query from './api/query/route.js'
 import items from './api/items/route.js'
+import categories from './api/categories/route.js'
 
 const { SERVER_PROTOCOL = 'http', SERVER_DOMAIN = 'localhost', SERVER_PORT = '3030' } = process.env ?? {}
 
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 
 app.use('/api', query)
 app.use('/api', items)
+app.use('/api', categories)
 
 app.get('*', (req, res) => {
   res.status(404)
