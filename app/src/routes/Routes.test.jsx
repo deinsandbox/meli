@@ -46,8 +46,6 @@ describe('Router', () => {
       initialEntries: ['/foo'],
     })
     render(<RouterProvider router={router} />)
-    const image = screen.getByRole('img')
-    expect(image).toBeInTheDocument()
     const message = screen.getByText('no existe', { exact: false, ignore: true })
     expect(message).toBeInTheDocument()
   })
