@@ -1,4 +1,7 @@
 import { NavLink, useRouteError } from 'react-router-dom'
+import NotFoundImage from '../assets/not-found.svg'
+
+import './Error.scss'
 
 const Error = () => {
   const error = useRouteError()
@@ -6,13 +9,11 @@ const Error = () => {
 
   return (
     <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+      <img src={NotFoundImage} alt="Laptop buscando página con una lupa" />
 
-      <NavLink to="/">Back to Home</NavLink>
+      <p className="error-page-message">Parece que esta página no existe</p>
+
+      <NavLink to="/">Ir a la página principal</NavLink>
     </div>
   )
 }

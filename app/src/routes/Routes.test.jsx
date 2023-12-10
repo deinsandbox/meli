@@ -18,7 +18,8 @@ describe('Router', () => {
     })
     render(<RouterProvider router={router} />)
     await waitFor(() => {
-      expect(screen.getByText(/Oops!/i)).toBeInTheDocument()
+      const message = screen.getByText('no existe', { exact: false, ignore: true })
+      expect(message).toBeInTheDocument()
     })
   })
 
@@ -45,7 +46,10 @@ describe('Router', () => {
       initialEntries: ['/foo'],
     })
     render(<RouterProvider router={router} />)
-    expect(screen.getByText(/Oops!/i)).toBeInTheDocument()
+    const image = screen.getByRole('img')
+    expect(image).toBeInTheDocument()
+    const message = screen.getByText('no existe', { exact: false, ignore: true })
+    expect(message).toBeInTheDocument()
   })
 
   it('should navigate from error to home', async () => {
@@ -55,10 +59,11 @@ describe('Router', () => {
       initialEntries: ['/error'],
     })
     render(<RouterProvider router={router} />)
-    expect(screen.getByText(/Oops!/i)).toBeInTheDocument()
+    const message = screen.getByText('no existe', { exact: false, ignore: true })
+    expect(message).toBeInTheDocument()
 
-    const homeButton = screen.getByRole('button', { name: 'Back to Home' })
-    await userEvent.click(homeButton)
+    const link = screen.getByText('ir a', { exact: false, ignore: true })
+    await userEvent.click(link)
 
     expect(screen.getByText(/Home/i)).toBeInTheDocument()
   })

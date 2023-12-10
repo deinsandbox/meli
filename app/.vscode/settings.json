@@ -6,7 +6,7 @@
     ],
     "explorer.fileNesting.patterns": {
         "*.js": "$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture)*.snap",
-        "*.jsx": "$(capture).test.jsx, $(capture)*.snap",
+        "*.jsx": "$(capture).scss, $(capture).test.jsx, $(capture)*.snap",
         "package.json": "package-lock.json, .eslint*, .gitignore, .prettier*, .stylelint*, vite*.config.js",
     },
     "emmet.excludeLanguages": [],
