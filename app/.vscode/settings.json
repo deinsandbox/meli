@@ -64,5 +64,6 @@
     },
     "conventionalCommits.scopes": [
         "app"
-    ]
+    ],
+    "reactSnippets.settings.importReactOnTop": false
 }
