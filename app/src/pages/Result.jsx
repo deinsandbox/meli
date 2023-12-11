@@ -14,7 +14,7 @@ const Result = () => {
   })
 
   useEffect(() => {
-    if (!('search' in params)) {
+    if (!('search' in params) || params['search'] === '') {
       return navigate('/error')
     }
   }, [navigate])

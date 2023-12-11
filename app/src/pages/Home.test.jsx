@@ -3,10 +3,10 @@ import { render, screen } from '@testing-library/react'
 
 import Home from './Home'
 
-describe('App', () => {
+describe('Home', () => {
   it('renders headline', () => {
     render(<Home />)
-
-    expect(screen.getByText(/Home/i)).toBeInTheDocument()
+    const homeContainer = screen.getByTestId('home-container')
+    expect(homeContainer).toBeInTheDocument()
   })
 })

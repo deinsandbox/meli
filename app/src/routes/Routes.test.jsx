@@ -9,7 +9,8 @@ describe('Router', () => {
   it('should render the home', async () => {
     const router = createBrowserRouter(routesConfig)
     render(<RouterProvider router={router} />)
-    expect(screen.getByText(/Home/i)).toBeInTheDocument()
+    const homeContainer = screen.getByTestId('home-container')
+    expect(homeContainer).toBeInTheDocument()
   })
 
   it('should render the error page when not use search as query parameter', async () => {
@@ -63,6 +64,7 @@ describe('Router', () => {
     const link = screen.getByText('ir a', { exact: false, ignore: true })
     await userEvent.click(link)
 
-    expect(screen.getByText(/Home/i)).toBeInTheDocument()
+    const homeContainer = screen.getByTestId('home-container')
+    expect(homeContainer).toBeInTheDocument()
   })
 })

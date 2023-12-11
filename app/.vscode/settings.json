@@ -3,7 +3,8 @@
         "meli",
         "Mercadolibre",
         "minireset",
-        "swpm"
+        "swpm",
+        "testid"
     ],
     "explorer.fileNesting.patterns": {
         "*.js": "$(capture).js.map, $(capture).*.js, $(capture)_*.js, $(capture)*.snap",

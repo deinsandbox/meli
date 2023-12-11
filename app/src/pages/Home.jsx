@@ -1,7 +1,7 @@
 import './Home.scss'
 
 const Home = () => {
-  return <section className="home-container">Home</section>
+  return <section data-testid="home-container" className="home-container" />
 }
 
 export default Home
