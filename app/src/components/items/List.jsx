@@ -27,7 +27,7 @@ const List = ({ query }) => {
     <>
       <SEO title={query} keywords={data?.path || []} type="website" />
 
-      {data?.path?.length > 0 && <Breadcrumb path={data?.path} />}
+      <div className="breadcrumb-path">{data?.path?.length > 0 && <Breadcrumb path={data?.path} />}</div>
 
       <div className="list-container">
         {data?.items.map((item) => (

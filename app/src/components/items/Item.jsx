@@ -36,7 +36,7 @@ const Item = ({ id }) => {
     <>
       <SEO title={title} description={description} keywords={data?.path || []} type="article" image={picture} />
 
-      {data?.path?.length > 0 && <Breadcrumb path={data?.path} />}
+      <div className="breadcrumb-path">{data?.path?.length > 0 && <Breadcrumb path={data?.path} />}</div>
 
       <div className="item-container">
         <article className="item-product">
