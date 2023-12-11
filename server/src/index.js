@@ -3,6 +3,7 @@ import express from 'express'
 import compression from 'compression'
 
 import { author } from './middleware/author.js'
+import { cors } from './middleware/cors.js'
 
 import query from './api/query/route.js'
 import items from './api/items/route.js'
@@ -14,6 +15,7 @@ const app = express()
 app.use(compression())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cors)
 app.use(author)
 
 app.get('/', (req, res) => {
