@@ -22,7 +22,7 @@ git clone https://github.com/deinsandbox/meli
 ```bash
 cd server
 npm install
-npm run start:dev
+npm run dev
 ```
 
 By default, server will be running on port 3030, but you can change it in `.env.local` file.
