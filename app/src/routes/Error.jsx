@@ -8,13 +8,13 @@ const Error = () => {
   console.error(error)
 
   return (
-    <div id="error-page">
+    <section className="error-page">
       <img src={NotFoundImage} alt="Laptop buscando página con una lupa" />
 
       <p className="error-page-message">Parece que esta página no existe</p>
 
       <NavLink to="/">Ir a la página principal</NavLink>
-    </div>
+    </section>
   )
 }
 

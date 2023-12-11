@@ -1,0 +1,12 @@
+@import "./styles/_config.scss";
+
+.home {
+    &-container {
+        grid-column: 2 / 3;
+        align-self: start;
+        justify-self: center;
+
+        max-width: $main-width;
+        width: 100%;
+    }
+}

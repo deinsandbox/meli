@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
+import './Result.scss'
+
 const params = {}
 
 const Result = () => {
@@ -17,7 +19,7 @@ const Result = () => {
     }
   }, [navigate])
 
-  return <div>Result {params['search']}</div>
+  return <section className="result-container">Result {params['search']}</section>
 }
 
 export default Result

@@ -1,5 +1,7 @@
+import './Home.scss'
+
 const Home = () => {
-  return <div>Home</div>
+  return <section className="home-container">Home</section>
 }
 
 export default Home

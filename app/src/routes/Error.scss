@@ -1,4 +1,8 @@
 .error-page {
+    grid-column: 2 / 3;
+    place-self: center;
+    text-align: center;
+
     &-message {
         padding: 14px;
         font-weight: 700 bold;

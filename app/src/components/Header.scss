@@ -1,0 +1,28 @@
+@import "./styles/_config.scss";
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $header-bg;
+    height: $header-height;
+
+    &-logo {
+        max-height: $search-height;
+        align-self: center;
+
+        &-image {
+            height: $search-height;
+            width: auto;
+        }
+    }
+
+    &-container {
+        display: inherit;
+        max-height: $search-height;
+
+        max-width: $main-width;
+        width: 100%;
+        gap: 24px;
+    }
+}

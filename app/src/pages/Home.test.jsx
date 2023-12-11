@@ -7,8 +7,6 @@ describe('App', () => {
   it('renders headline', () => {
     render(<Home />)
 
-    screen.debug()
-
     expect(screen.getByText(/Home/i)).toBeInTheDocument()
   })
 })
