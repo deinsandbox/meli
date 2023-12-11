@@ -36,3 +36,5 @@ cd app
 npm install
 npm run dev
 ```
+
+By default, server project was configured to make the API connection to `http://localhost:3030` and the localization currency to `es-AR`, but you can change it in `.env.local` file.
