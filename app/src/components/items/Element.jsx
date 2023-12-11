@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { currencyFormat } from '../../helpers/format'
+import { currencyFormat } from '../../helpers/currency'
 
 import IconShipping from '../../assets/icon-shipping.png'
 import DummyItem from '../../assets/dummy-item.svg'
@@ -8,7 +8,8 @@ import './Element.scss'
 
 const Element = ({ id, title, price, picture, condition, free_shipping }) => {
   const { amount, currency, decimals } = price
-  const value = currencyFormat(amount, 'es-AR', currency, decimals)
+  const currencyLocale = import.meta.env.VITE_CURRENCY_LOCALE ?? ''
+  const value = currencyFormat(amount, currencyLocale, currency, decimals)
   const textCondition = condition ? 'Nuevo' : 'Usado'
 
   return (

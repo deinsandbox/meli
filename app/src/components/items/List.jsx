@@ -8,10 +8,12 @@ const List = ({ query }) => {
   const { data, isLoading, isError } = useItemList(query) ?? {}
 
   if (isError) {
+    // TODO: error component
     return <div>Error</div>
   }
 
   if (isLoading) {
+    // TODO: loading styles (like error in middle)
     return <Loading />
   }
 

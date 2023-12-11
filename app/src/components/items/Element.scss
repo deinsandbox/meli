@@ -11,15 +11,14 @@
         display: grid;
         grid-template-columns: 200px 1fr auto;
         grid-template-rows: 1fr;
-        background-color: $item-list-bg;
+        background-color: $item-bg;
         padding: 12px;
         border-bottom: 1px solid $item-division;
     }
 
     &-thumbnail {
         place-self: center;
-        min-height: calc(160px);
-
+        min-height: 160px;
 
         img {
             border-radius: 4px;

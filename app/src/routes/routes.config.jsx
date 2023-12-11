@@ -1,6 +1,6 @@
 import Home from '../pages/Home.jsx'
 import Result from '../pages/Result.jsx'
-import Item from '../pages/Item.jsx'
+import Product from '../pages/Product.jsx'
 
 import Error from './Error.jsx'
 
@@ -16,7 +16,7 @@ const routesConfig = [
   },
   {
     path: '/items/:id',
-    element: <Item />,
+    element: <Product />,
   },
 ]
 
