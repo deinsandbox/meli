@@ -9,6 +9,7 @@ import DummyItem from '../../assets/dummy-item.svg'
 
 import './Item.scss'
 import Breadcrumb from '../Breadcrumb'
+import SEO from '../SEO'
 
 const Item = ({ id }) => {
   const { data, isLoading, isError } = useItem(id) ?? {}
@@ -34,7 +35,10 @@ const Item = ({ id }) => {
 
   return (
     <>
+      <SEO title={title} description={description} keywords={data?.path || []} type="article" image={picture} />
+
       {data?.path?.length > 0 && <Breadcrumb path={data?.path} />}
+
       <div className="item-container">
         <article className="item-product">
           <div className="item-image">
