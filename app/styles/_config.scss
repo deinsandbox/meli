@@ -1,6 +1,8 @@
+@import "./_media.scss";
+
 $main-fg: #333;
 $main-bg: #fff;
-$main-width: 1024px;
+$main-width: map-get($breakPoints, "xl");
 
 $header-bg: #ffdb15;
 $header-height: 50px;

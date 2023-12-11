@@ -1,0 +1,17 @@
+$breakPoints: (
+  "sm": 320px,
+  "md": 480px,
+  "lg": 768px,
+  "xl": 1024px,
+);
+
+//mixins (mobile first)
+@mixin screen($size) {
+  @if map-has-key($breakPoints, $size) {
+    @media (min-width: map-get($breakPoints, $size)) {
+      @content;
+    }
+  } @else {
+    @error "Unknown screen size: #{$size}";
+  }
+}
