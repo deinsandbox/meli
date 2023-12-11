@@ -31,7 +31,6 @@ const Item = ({ id }) => {
 
   const textCondition = condition ? 'Nuevo' : 'Usado'
 
-  console.log({ data, amount, value, decimals })
 
   return (
     <>
@@ -41,7 +40,7 @@ const Item = ({ id }) => {
             <img src={picture || DummyItem} alt={title} />
           </div>
           <div className="item-description">
-            {Boolean(description) && (
+            {Boolean(description) && description !== '.' && (
               <>
                 <h2 className="item-description-title">Descripción del producto:</h2>
                 <div>{description}</div>
