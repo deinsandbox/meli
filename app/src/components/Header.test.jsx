@@ -1,3 +1,11 @@
-import { it, expect, describe } from 'vitest'
+import { it, describe } from 'vitest'
+import { render, screen } from '@testing-library/react'
 
-describe.skip('Header', () => {})
+import Header from './Header'
+
+describe('Header', () => {
+  it('should render the header', () => {
+    render(<Header />)
+    screen.getByAltText(/Mercado Libre/i)
+  })
+})

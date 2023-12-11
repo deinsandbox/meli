@@ -7,7 +7,7 @@ const Product = () => {
   const { id } = useParams()
 
   return (
-    <section className="product-container">
+    <section data-testid="product-container" className="product-container">
       <Item id={id} />
     </section>
   )

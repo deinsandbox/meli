@@ -21,7 +21,7 @@ const Result = () => {
   }, [navigate])
 
   return (
-    <section className="result-container">
+    <section data-testid="result-container" className="result-container">
       <List query={params['search']} />
     </section>
   )

@@ -29,17 +29,17 @@ describe('Router', () => {
       initialEntries: ['/items?search=foo'],
     })
     render(<RouterProvider router={router} />)
-    expect(screen.getByText(/Result/i)).toBeInTheDocument()
-    expect(screen.getByText(/foo/i)).toBeInTheDocument()
+    const homeContainer = screen.getByTestId('result-container')
+    expect(homeContainer).toBeInTheDocument()
   })
 
-  it('should render the item page', () => {
+  it('should render the product page', () => {
     const router = createMemoryRouter(routesConfig, {
       initialEntries: ['/items/foo'],
     })
     render(<RouterProvider router={router} />)
-    expect(screen.getByText(/Item/i)).toBeInTheDocument()
-    expect(screen.getByText(/foo/i)).toBeInTheDocument()
+    const homeContainer = screen.getByTestId('product-container')
+    expect(homeContainer).toBeInTheDocument()
   })
 
   it('should show an error when path not exist', () => {
