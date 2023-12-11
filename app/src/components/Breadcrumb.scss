@@ -1,0 +1,13 @@
+@import "../styles/_config.scss";
+
+.breadcrumb {
+    margin: 8px 0;
+    color: $breadcrumb-fg;
+    font-size: 14px;
+    min-height: 21px;
+
+    &-current {
+        color: $breadcrumb-fg-current;
+        font-weight: 700;
+    }
+}

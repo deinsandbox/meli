@@ -8,6 +8,7 @@ import IconShipping from '../../assets/icon-shipping.png'
 import DummyItem from '../../assets/dummy-item.svg'
 
 import './Item.scss'
+import Breadcrumb from '../Breadcrumb'
 
 const Item = ({ id }) => {
   const { data, isLoading, isError } = useItem(id) ?? {}
@@ -31,9 +32,9 @@ const Item = ({ id }) => {
 
   const textCondition = condition ? 'Nuevo' : 'Usado'
 
-
   return (
     <>
+      {data?.path?.length > 0 && <Breadcrumb path={data?.path} />}
       <div className="item-container">
         <article className="item-product">
           <div className="item-image">

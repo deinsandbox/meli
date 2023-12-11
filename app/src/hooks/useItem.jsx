@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getItemService } from '../services/getItem'
+import { getCategories } from '../services/getCategories'
 
 const useItem = (id) => {
   const initState = {
@@ -11,13 +12,22 @@ const useItem = (id) => {
 
   useEffect(() => {
     return () => {
-      try {
-        getItemService(id).then((response) => {
-          setData((prev) => ({ ...prev, isLoading: false, data: response }))
+      getItemService(id)
+        .then((response) => {
+          setData((prev) => ({ ...prev, data: response }))
+
+          if ('category_id' in response.item) {
+            getCategories(response?.item?.category_id).then((response) => {
+              setData((prev) => ({ ...prev, data: { ...prev.data, path: response.path } }))
+            })
+          }
         })
-      } catch {
-        setData({ data: [], isLoading: false, isError: true })
-      }
+        .catch(() => {
+          setData((prev) => ({ ...prev, isError: true }))
+        })
+        .finally(() => {
+          setData((prev) => ({ ...prev, isLoading: false }))
+        })
     }
   }, [id])
 

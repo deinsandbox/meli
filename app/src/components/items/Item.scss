@@ -2,7 +2,7 @@
 
 .item {
     &-container {
-        margin: 24px 0;
+        margin: 12px 0;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -45,7 +45,7 @@
     }
 
     &-title {
-        font-weight: 700 bolder;
+        font-weight: 700;
         font-size: 22px;
         line-height: 1;
         padding: 8px 0;
@@ -58,12 +58,12 @@
 
     &-price {
         font-size: 36px;
-        font-weight: 700 bolder;
+        font-weight: 700;
     }
 
     &-decimals {
         align-self: center;
-        font-weight: 700 bolder;
+        font-weight: 700;
         padding-bottom: 15px;
     }
 
@@ -79,7 +79,7 @@
 
     &-description {
         &-title {
-            font-weight: 700 bolder;
+            font-weight: 700;
             font-size: 24px;
             color: $main-fg;
         }

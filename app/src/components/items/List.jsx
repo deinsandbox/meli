@@ -3,6 +3,7 @@ import Element from './Element'
 import Loading from '../../routes/Loading'
 
 import './List.scss'
+import Breadcrumb from '../Breadcrumb'
 
 const List = ({ query }) => {
   const { data, isLoading, isError } = useItemList(query) ?? {}
@@ -22,11 +23,14 @@ const List = ({ query }) => {
   }
 
   return (
-    <div className="list-container">
-      {data?.items.map((item) => (
-        <Element {...item} key={item.id} />
-      ))}
-    </div>
+    <>
+      {data?.path?.length > 0 && <Breadcrumb path={data?.path} />}
+      <div className="list-container">
+        {data?.items.map((item) => (
+          <Element {...item} key={item.id} />
+        ))}
+      </div>
+    </>
   )
 }
 
