@@ -1,6 +1,6 @@
 # MELI
 
-Follow this instructions to get started with MELI project.
+Please follow these instructions to get started with the **MELI** project.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ npm install
 npm run dev
 ```
 
-By default, server will be running on port 3030, but you can change it in `.env.local` file.
+The server will be running on port `3030` by default, but you can modify this setting by editing the `.env.local` file.
 
 ## App
 
@@ -37,4 +37,4 @@ npm install
 npm run dev
 ```
 
-By default, server project was configured to make the API connection to `http://localhost:3030` and the localization currency to `es-AR`, but you can change it in `.env.local` file.
+The server project is configured by default to make the API connection to `http://localhost:3030` and use the `es-AR` localization currency. However, you can modify these settings by editing the `.env.local` file.
