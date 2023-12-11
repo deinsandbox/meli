@@ -1,0 +1,70 @@
+@import "../../styles/config";
+
+.element {
+    &-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    &-container {
+        display: grid;
+        grid-template-columns: 200px 1fr auto;
+        grid-template-rows: 1fr;
+        background-color: $item-list-bg;
+        padding: 12px;
+        border-bottom: 1px solid $item-division;
+    }
+
+    &-thumbnail {
+        place-self: center;
+        min-height: calc(160px);
+
+
+        img {
+            border-radius: 4px;
+            overflow: hidden;
+            height: 160px;
+            width: 160px;
+            aspect-ratio: 1 / 1;
+        }
+
+        padding: 0 24px;
+    }
+
+    &-info {
+        align-self: start;
+        justify-self: stretch;
+        padding-top: 12px;
+    }
+
+    &-pricing {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &-price {
+        font-weight: 700 bolder;
+        font-size: 24px;
+    }
+
+    &-shipping {
+        height: 18px;
+        img {
+            width: 18px;
+            height: auto;
+        }
+    }
+
+    &-city{
+        width: 0%;
+
+        @include screen("lg") {
+            min-width: 100px;
+            width: 100%;
+            display: block;
+        }
+    }
+
+}

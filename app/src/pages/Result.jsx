@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 
 import './Result.scss'
+import List from '../components/items/List'
 
 const params = {}
 
@@ -19,7 +20,11 @@ const Result = () => {
     }
   }, [navigate])
 
-  return <section className="result-container">Result {params['search']}</section>
+  return (
+    <section className="result-container">
+      <List query={params['search']} />
+    </section>
+  )
 }
 
 export default Result

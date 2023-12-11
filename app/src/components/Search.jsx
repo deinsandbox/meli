@@ -1,7 +1,7 @@
 import './Search.scss'
 import IconSearch from '../assets/icon-search.svg'
 
-const Search = () => {
+const Search = ({ query = '' }) => {
   return (
     <>
       <form className="search-form" action="/items" method="get">
@@ -13,6 +13,7 @@ const Search = () => {
           placeholder="Nunca dejes de buscar"
           autoFocus
           required
+          defaultValue={query}
         />
         <button type="submit" className="search-button">
           <img src={IconSearch} alt="Buscar" className="search-button-icon" />
