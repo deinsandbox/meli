@@ -18,6 +18,7 @@ router.get('/items/:id', async (req, res) => {
     if (response?.error) {
       res.status(404)
       res.send('item not found')
+      return
     }
     if (response?.ok === false) {
       throw new Error('Oops! Something went wrong, please try again later.')
@@ -36,6 +37,7 @@ router.get('/items/:id', async (req, res) => {
   } catch (e) {
     res.status(500)
     res.send(e.toString())
+    return
   }
 })
 

@@ -24,7 +24,7 @@ export const parseItemModel = (data) => {
       price: {
         currency: currency_id,
         amount: price,
-        decimals: getDecimalLength(price) ?? 2,
+        decimals: (Boolean(price) && getDecimalLength(price)) ?? 2,
       },
       picture: getImage(thumbnail, secure_thumbnail, pictures),
       condition,

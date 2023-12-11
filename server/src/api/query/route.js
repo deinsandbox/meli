@@ -29,6 +29,7 @@ router.get('/items', async (req, res) => {
   } catch (e) {
     res.status(500)
     res.send(e.toString())
+    return
   }
 })
 
