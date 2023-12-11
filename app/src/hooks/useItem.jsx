@@ -4,7 +4,7 @@ import { getCategories } from '../services/getCategories'
 
 const useItem = (id) => {
   const initState = {
-    data: [],
+    data: {},
     isLoading: true,
     isError: false,
   }
@@ -18,7 +18,7 @@ const useItem = (id) => {
 
           if ('category_id' in response.item) {
             getCategories(response?.item?.category_id).then((response) => {
-              setData((prev) => ({ ...prev, data: { ...prev.data, path: response.path } }))
+              setData((prev) => ({ ...prev, data: { ...prev.data, path: response?.path ?? [] } }))
             })
           }
         })

@@ -20,7 +20,7 @@ const useItemList = (query) => {
           if ('categories' in response) {
             const category = selectCategory(response?.categories)
             getCategories(category).then((response) => {
-              setData((prev) => ({ ...prev, data: { ...prev.data, path: response.path } }))
+              setData((prev) => ({ ...prev, data: { ...prev.data, path: response?.path ?? [] } }))
             })
           }
         })

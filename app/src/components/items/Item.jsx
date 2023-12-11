@@ -1,4 +1,4 @@
-import Loading from '../../routes/Loading'
+import Loading from '../shared/Loading'
 
 import useItem from '../../hooks/useItem'
 
@@ -10,17 +10,16 @@ import DummyItem from '../../assets/dummy-item.svg'
 import './Item.scss'
 import Breadcrumb from '../Breadcrumb'
 import SEO from '../SEO'
+import ErrorMessage from '../shared/ErrorMessage'
 
 const Item = ({ id }) => {
   const { data, isLoading, isError } = useItem(id) ?? {}
 
   if (isError) {
-    // TODO: error component
-    return <div>Error</div>
+    return <ErrorMessage />
   }
 
   if (isLoading) {
-    // TODO: loading styles (like error in middle)
     return <Loading />
   }
 
