@@ -12,7 +12,7 @@ export const parseItemModel = (data) => {
       secure_thumbnail,
       pictures,
       condition,
-      shipping: { free_shipping },
+      shipping: { free_shipping = false } = {},
       sold_quantity,
     } = data?.item ?? {}
 
@@ -28,7 +28,7 @@ export const parseItemModel = (data) => {
       },
       picture: getImage(thumbnail, secure_thumbnail, pictures),
       condition,
-      free_shipping,
+      free_shipping: free_shipping ?? false,
       sold_quantity: sold_quantity ?? 0,
       description: plain_text,
     }

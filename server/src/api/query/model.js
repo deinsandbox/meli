@@ -2,15 +2,7 @@ import { getDecimalLength } from '../../helpers/currency.js'
 
 const parseItem = (data) => {
   try {
-    const {
-      id,
-      title,
-      currency_id,
-      price,
-      thumbnail,
-      condition,
-      shipping: { free_shipping },
-    } = data ?? {}
+    const { id, title, currency_id, price, thumbnail, condition, shipping: { free_shipping = false } = {} } = data ?? {}
 
     const item = {
       id,
