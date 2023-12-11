@@ -12,6 +12,7 @@ const Search = () => {
           className="search-input"
           placeholder="Nunca dejes de buscar"
           autoFocus
+          required
         />
         <button type="submit" className="search-button">
           <img src={IconSearch} alt="Buscar" className="search-button-icon" />

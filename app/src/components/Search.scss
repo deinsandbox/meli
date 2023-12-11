@@ -35,10 +35,20 @@
         min-width: $search-height;
         border-radius: 0 4px 4px 0;
         border: none;
+        cursor: not-allowed;
 
         &-icon {
+            filter: grayscale(100%) invert(70%) brightness(70%) contrast(70%);
             width: 20px;
             height: 20px;
         }
+    }
+
+    &-form:valid &-button {
+        cursor: pointer;
+    }
+
+    &-form:valid &-button-icon {
+        filter: none;
     }
 }
