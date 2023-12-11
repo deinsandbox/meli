@@ -6,6 +6,7 @@ export const parseItemModel = (data) => {
     const {
       id,
       title,
+      category_id,
       price,
       currency_id,
       thumbnail,
@@ -21,6 +22,7 @@ export const parseItemModel = (data) => {
     const item = {
       id,
       title,
+      category_id,
       price: {
         currency: currency_id,
         amount: price,
