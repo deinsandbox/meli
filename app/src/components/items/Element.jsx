@@ -18,7 +18,7 @@ const Element = ({ id, title, price, picture, condition, free_shipping }) => {
         <NavLink className="element-link" to={`/items/${id}`}>
           <div className="element-container">
             <div className="element-thumbnail">
-              <img src={picture || DummyItem} alt={title} />
+              <img src={picture || DummyItem} alt={title} fetchpriority="high" />
             </div>
             <div className="element-info">
               <div className="element-pricing">
@@ -30,7 +30,7 @@ const Element = ({ id, title, price, picture, condition, free_shipping }) => {
               <div>{title}</div>
               <div>{textCondition}!</div>
             </div>
-            <div className="element-city">{}</div>
+            <div className="element-city">{ }</div>
           </div>
         </NavLink>
       </article>

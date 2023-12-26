@@ -41,7 +41,7 @@ const Item = ({ id }) => {
       <div className="item-container">
         <article className="item-product">
           <div className="item-image">
-            <img src={picture || DummyItem} alt={title} />
+            <img src={picture || DummyItem} alt={title} fetchpriority="high" />
           </div>
           <div className="item-description">
             {Boolean(description) && description !== '.' && (
